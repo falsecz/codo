@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Codo Documentation</title>
+  <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
+  <script src='../assets/codo.js'></script>
+</head>
+  <body>
+    <div id='header'>
+  <div id='menu'>
+    <a href='../_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>Variable</span>
+  </div>
+  <div id='search'>
+    <a id='class_list_link' href='../class_list.html'>Class List</a>
+    <a id='method_list_link' href='../method_list.html'>Method List</a>
+    <a id='file_list_link' href='../file_list.html'>File List</a>
+  </div>
+  <iframe id='search_frame'></iframe>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        Variable
+      </h1>
+      <dl class='box'>
+        <dt>Defined in:</dt>
+        <dd>src/nodes/variable.coffee</dd>
+      </dl>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>A CoffeeScript variable
+
+</p>
+
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(clazz, node, options, classType = false, comment = null)
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Construct a variable
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getType-instance'>
+        - (String) <strong>getType</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the variable type, either `class` or `constant`
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#isConstant-instance'>
+        - (Boolean) <strong>isConstant</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Test if the given value should be treated ad constant.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getDoc-instance'>
+        - (Doc) <strong>getDoc</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the class doc
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getName-instance'>
+        - (String) <strong>getName</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the variable name
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getValue-instance'>
+        - (String) <strong>getValue</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the variable value.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#toJSON-instance'>
+        - (Object) <strong>toJSON</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get a JSON representation of the object
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(clazz, node, options, classType = false, comment = null)
+    </p>
+    <div class='docstring'>
+  <p>Construct a variable
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the variables class</span>
+    </li>
+    <li>
+      <span class='name'>node</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the node</span>
+    </li>
+    <li>
+      <span class='name'>options</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the parser options</span>
+    </li>
+    <li>
+      <span class='name'>classType</span>
+      <span class='type'>
+        (<tt>Boolean</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>whether its a class variable or not</span>
+    </li>
+    <li>
+      <span class='name'>comment</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the comment node</span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='getType-instance'>
+      - (String) <strong>getType</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the variable type, either <code>class</code> or <code>constant</code>
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the variable type</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='isConstant-instance'>
+      - (Boolean) <strong>isConstant</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Test if the given value should be treated ad constant.
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Boolean</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>true if a constant</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getDoc-instance'>
+      - (Doc) <strong>getDoc</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the class doc
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt><a href='../classes/Doc.html'>Doc</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class doc</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getName-instance'>
+      - (String) <strong>getName</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the variable name
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the variable name</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getValue-instance'>
+      - (String) <strong>getValue</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the variable value.
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the value</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='toJSON-instance'>
+      - (Object) <strong>toJSON</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get a JSON representation of the object
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the JSON object</span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Fri Feb 17 2012 17:43:38 GMT+0100 (CET)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
+  v0.2.1
+  (Node.js v0.6.10).
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

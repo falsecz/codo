@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Codo Documentation</title>
+  <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
+  <script src='../assets/codo.js'></script>
+</head>
+  <body>
+    <div id='header'>
+  <div id='menu'>
+    <a href='../_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>Method</span>
+  </div>
+  <div id='search'>
+    <a id='class_list_link' href='../class_list.html'>Class List</a>
+    <a id='method_list_link' href='../method_list.html'>Method List</a>
+    <a id='file_list_link' href='../file_list.html'>File List</a>
+  </div>
+  <iframe id='search_frame'></iframe>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        Method
+      </h1>
+      <dl class='box'>
+        <dt>Defined in:</dt>
+        <dd>src/nodes/method.coffee</dd>
+      </dl>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>A CoffeeScript method
+
+</p>
+
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(clazz, node, options, comment)
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Construct a method
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getType-instance'>
+        - (String) <strong>getType</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the method type, either `class` or `instance`
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getDoc-instance'>
+        - (Doc) <strong>getDoc</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the class doc
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getSignature-instance'>
+        - (String) <strong>getSignature</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the full method signature.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getShortSignature-instance'>
+        - (String) <strong>getShortSignature</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the short method signature.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getName-instance'>
+        - (String) <strong>getName</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the method name
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getParamaters-instance'>
+        - (void) <strong>getParamaters</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the method parameters
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getCoffeeScriptSource-instance'>
+        - (String) <strong>getCoffeeScriptSource</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the method source in CoffeeScript
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getJavaScriptSource-instance'>
+        - (String) <strong>getJavaScriptSource</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get the method source in JavaScript
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#toJSON-instance'>
+        - (Object) <strong>toJSON</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Get a JSON representation of the object
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(clazz, node, options, comment)
+    </p>
+    <div class='docstring'>
+  <p>Construct a method
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the methods class</span>
+    </li>
+    <li>
+      <span class='name'>node</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the node</span>
+    </li>
+    <li>
+      <span class='name'>options</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the parser options</span>
+    </li>
+    <li>
+      <span class='name'>comment</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the comment node</span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='getType-instance'>
+      - (String) <strong>getType</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the method type, either <code>class</code> or <code>instance</code>
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the method type</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getDoc-instance'>
+      - (Doc) <strong>getDoc</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the class doc
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt><a href='../classes/Doc.html'>Doc</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class doc</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getSignature-instance'>
+      - (String) <strong>getSignature</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the full method signature.
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the signature</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getShortSignature-instance'>
+      - (String) <strong>getShortSignature</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the short method signature.
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the short signature</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getName-instance'>
+      - (String) <strong>getName</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the method name
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the method name</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getParamaters-instance'>
+      - (void) <strong>getParamaters</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the method parameters
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>the</span>
+      <span class='type'>
+        (<tt>Array<<a href='../classes/Parameter.html'>Parameter</a>></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>method parameters</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getCoffeeScriptSource-instance'>
+      - (String) <strong>getCoffeeScriptSource</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the method source in CoffeeScript
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the CoffeeScript source</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getJavaScriptSource-instance'>
+      - (String) <strong>getJavaScriptSource</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get the method source in JavaScript
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the JavaScript source</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='toJSON-instance'>
+      - (Object) <strong>toJSON</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get a JSON representation of the object
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the JSON object</span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Fri Feb 17 2012 17:43:38 GMT+0100 (CET)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
+  v0.2.1
+  (Node.js v0.6.10).
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

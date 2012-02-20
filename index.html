@@ -8,14 +8,24 @@
   <body>
     <div id='header'>
   <div id='menu'>
-    <a href='_index.html' title='Index'>Index</a>
+    <a href='class_index.html' title='Index'>Index</a>
     &raquo;
     <span class='title'>README.md</span>
-  </div>
-  <div id='search'>
-    <a id='class_list_link' href='class_list.html'>Class List</a>
-    <a id='method_list_link' href='method_list.html'>Method List</a>
-    <a id='file_list_link' href='file_list.html'>File List</a>
+    <nav>
+      <ul>
+        <li class='frames'>
+          (<a class='frames' href='frames.html'>frames</a>)
+        </li>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='class_list.html'>Class List</a>
+      <a id='method_list_link' href='method_list.html'>Method List</a>
+      <a id='file_list_link' href='file_list.html'>File List</a>
+    </div>
   </div>
   <iframe id='search_frame'></iframe>
 </div>
@@ -23,17 +33,18 @@
       <div id='filecontents'>
         <h1>Codo <a href="http://travis-ci.org/netzpirat/codo.png"><img src="https://secure.travis-ci.org/netzpirat/codo.png" alt="Build Status"></a></h1>
 <p>Codo is a <a href="http://coffeescript.org/">CoffeeScript</a> API documentation generator, similar to <a href="http://yardoc.org/">YARD</a>.
-Its generated documentation is focused on CoffeeScript class syntax for classical inheritance and not for JavaScript&apos;s
+Its generated documentation is focused on CoffeeScript class syntax for classical inheritance and not for JavaScript&#39;s
 prototypal inheritance.
 
 </p>
 <h2>Codo in action</h2>
-<p>You can browse the <a href="http://netzpirat.github.com/codo">Codo documentation</a> and the
-<a href="http://9elements.github.com/haml-coffee/">Haml-Coffee documentation</a> to see Codo in action.
+<p>You can browse the <a href="http://netzpirat.github.com/codo">Codo documentation</a>, which contains a sample class
+<a href="http://netzpirat.github.com/codo/classes/Example/Animal.html">Example.Animal</a> that makes use of all available tags.
 
 </p>
-<p>The Codo documentation contains a sample class <a href="http://netzpirat.github.com/codo/classes/Example/Animal.html">Example.Animal</a>
-that makes use of all available tags.
+<p>In addition there&#39;s list of
+<a href="https://github.com/netzpirat/codo/wiki/List-of-codo-generated-documentations">Codo generated documentations</a>
+in the wiki.
 
 </p>
 <h2>Installation</h2>
@@ -174,7 +185,7 @@ class Example.Animal
   # Move the animal.
   #
   # @example Move an animal
-  #   new Lion(&apos;Simba&apos;).move(&apos;south&apos;, 12)
+  #   new Lion(&#39;Simba&#39;).move(&#39;south&#39;, 12)
   #
   # @abstract
   # @param [Object] options the moving options
@@ -185,7 +196,7 @@ class Example.Animal
 
   # Copulate another animal.
   #
-  # @note Don&apos;t take it seriously
+  # @note Don&#39;t take it seriously
   #
   # @private
   # @author Michael Kessler
@@ -211,13 +222,13 @@ CoffeeScript files within a directory.
 Usage: codo [options] [source_files [- extra_files]]
 
 Options:
-  -r, --readme      The readme file used   [default: &quot;README.md&quot;]
-  -q, --quiet       Show no warnings       [boolean]  [default: false]
-  -o, --output-dir  The output directory   [default: &quot;./doc&quot;]
-  -v, --verbose     Show parsing errors    [boolean]  [default: false]
+  -r, --readme      The readme file used                [default: &quot;README.md&quot;]
+  -q, --quiet       Show no warnings                    [boolean]  [default: false]
+  -o, --output-dir  The output directory                [default: &quot;./doc&quot;]
+  -v, --verbose     Show parsing errors                 [boolean]  [default: false]
   -h, --help        Show the help
-  --private         Show private methods
-  --title                                  [default: &quot;CoffeeScript API Documentation&quot;]</code></pre>
+  --private         Show private methods and classes
+  --title                                               [default: &quot;CoffeeScript API Documentation&quot;]</code></pre>
 <h3>Project defaults</h3>
 <p>You can define your project defaults by write your command line options to a <code>.codoopts</code> file:
 
@@ -271,6 +282,10 @@ dynamic programming languages.</li>
 <li><a href="https://github.com/micmath/jsdoc">JsDoc</a> an automatic documentation generator for JavaScript.</li>
 <li><a href="https://github.com/visionmedia/dox">Dox</a> JavaScript documentation generator for node using markdown and jsdoc.</li>
 </ul>
+<h2>Contributors</h2>
+<ul>
+<li><a href="https://github.com/inossidabile">Boris Staal</a></li>
+</ul>
 <h2>Author</h2>
 <ul>
 <li><a href="https://github.com/netzpirat">Michael Kessler</a> (<a href="http://twitter.com/#!/netzpirat">@netzpirat</a>)</li>
@@ -287,7 +302,7 @@ dynamic programming languages.</li>
 </p>
 <p>Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
-&apos;Software&apos;), to deal in the Software without restriction, including
+&#39;Software&#39;), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
@@ -298,7 +313,7 @@ the following conditions:
 included in all copies or substantial portions of the Software.
 
 </p>
-<p>THE SOFTWARE IS PROVIDED &apos;AS IS&apos;, WITHOUT WARRANTY OF ANY KIND,
+<p>THE SOFTWARE IS PROVIDED &#39;AS IS&#39;, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -311,10 +326,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </div>
     <div id='footer'>
   Generated on
-  Fri Feb 17 2012 20:08:47 GMT+0100 (CET)
+  Mon Feb 20 2012 12:10:09 GMT+0100 (CET)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.2.1
+  v0.3.0
   (Node.js v0.6.10).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>

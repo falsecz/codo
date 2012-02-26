@@ -34,10 +34,12 @@
         Class:
         Doc
       </h1>
-      <dl class='box'>
-        <dt>Defined in:</dt>
-        <dd>src/nodes/doc.coffee</dd>
-      </dl>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>src/nodes/doc.coffee</td>
+        </tr>
+      </table>
       <h2>Overview</h2>
       <div class='docstring'>
   <p>A documentation node is responsible for parsing
@@ -53,7 +55,7 @@ the comments for known tags.
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(node, options)
+        - (void) <strong>constructor</strong>(node, clazz, options)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
@@ -76,7 +78,7 @@ the comments for known tags.
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(node, options)
+      - (void) <strong>constructor</strong>(node, clazz, options)
     </p>
     <div class='docstring'>
   <p>Construct a documentation
@@ -95,6 +97,14 @@ the comments for known tags.
       </span>
       &mdash;
       <span class='desc'>the comment node</span>
+    </li>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class context</span>
     </li>
     <li>
       <span class='name'>options</span>
@@ -138,11 +148,11 @@ the comments for known tags.
     </div>
     <div id='footer'>
   Generated on
-  Mon Feb 20 2012 12:10:09 GMT+0100 (CET)
+  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.3.0
-  (Node.js v0.6.10).
+  v0.4.1
+  (Node.js v0.6.11).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

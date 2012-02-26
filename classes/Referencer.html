@@ -34,10 +34,12 @@
         Class:
         Referencer
       </h1>
-      <dl class='box'>
-        <dt>Defined in:</dt>
-        <dd>src/util/referencer.coffee</dd>
-      </dl>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>src/util/referencer.coffee</td>
+        </tr>
+      </table>
       <h2>Overview</h2>
       <div class='docstring'>
   <p>Class reference resolver.
@@ -52,7 +54,7 @@
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(classes)
+        - (void) <strong>constructor</strong>(classes, options)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
@@ -122,12 +124,32 @@
   </li>
   <li>
     <span class='signature'>
-      <a href='#linkReferences-instance'>
-        - (String) <strong>linkReferences</strong>(text)
+      <a href='#resolveDoc-instance'>
+        - (Object) <strong>resolveDoc</strong>(data, clazz, path)
       </a>
     </span>
     <span class='desc'>
-      Create browsable links to classes, methods and constants.
+      Resolve all @see tags on class and method json output.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#resolveTextReferences-instance'>
+        - (String) <strong>resolveTextReferences</strong>(text, clazz, path)
+      </a>
+    </span>
+    <span class='desc'>
+      Search a text to find see links wrapped in curly braces.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#resolveSee-instance'>
+        - (Object) <strong>resolveSee</strong>(see, clazz, path)
+      </a>
+    </span>
+    <span class='desc'>
+      Resolves a @see link.
     </span>
   </li>
 </ul>
@@ -135,7 +157,7 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(classes)
+      - (void) <strong>constructor</strong>(classes, options)
     </p>
     <div class='docstring'>
   <p>Construct a referencer.
@@ -154,6 +176,14 @@
       </span>
       &mdash;
       <span class='desc'>all known classes</span>
+    </li>
+    <li>
+      <span class='name'>options</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the parser options</span>
     </li>
   </ul>
 </div>
@@ -343,6 +373,12 @@
       <span class='desc'>the processed text</span>
     </li>
   </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../classes/Referencer.html#getLink-instance'>#getLink</a>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -386,15 +422,20 @@
       <span class='desc'>the link if any</span>
     </li>
   </ul>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      <a href='../classes/Referencer.html#linkTypes-instance'>#linkTypes</a>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='linkReferences-instance'>
-      - (String) <strong>linkReferences</strong>(text)
+    <p class='signature' id='resolveDoc-instance'>
+      - (Object) <strong>resolveDoc</strong>(data, clazz, path)
     </p>
     <div class='docstring'>
-  <p>Create browsable links to classes, methods
-and constants.
+  <p>Resolve all @see tags on class and method json output.
 
 
 </p>
@@ -404,12 +445,71 @@ and constants.
   <h3>Parameters:</h3>
   <ul class='param'>
     <li>
-      <span class='name'>text</span>
+      <span class='name'>data</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the json data</span>
+    </li>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class context</span>
+    </li>
+    <li>
+      <span class='name'>path</span>
       <span class='type'>
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the text to parse.</span>
+      <span class='desc'>the path to the asset root</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the json data with resolved references</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='resolveTextReferences-instance'>
+      - (String) <strong>resolveTextReferences</strong>(text, clazz, path)
+    </p>
+    <div class='docstring'>
+  <p>Search a text to find see links wrapped in curly braces.
+
+
+
+</p>
+
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      Reference an object
+    </h4>
+    <pre><code class='coffee'>&quot;To get a list of all customers, go to {Customers.getAll}&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>the</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>text to search</span>
     </li>
   </ul>
   <h3>Returns:</h3>
@@ -419,7 +519,58 @@ and constants.
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the processed text</span>
+      <span class='desc'>the text with hyperlinks</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='resolveSee-instance'>
+      - (Object) <strong>resolveSee</strong>(see, clazz, path)
+    </p>
+    <div class='docstring'>
+  <p>Resolves a @see link.
+
+
+</p>
+
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>see</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the see object</span>
+    </li>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class context</span>
+    </li>
+    <li>
+      <span class='name'>path</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the path to the asset root</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the resolved see</span>
     </li>
   </ul>
 </div>
@@ -428,11 +579,11 @@ and constants.
     </div>
     <div id='footer'>
   Generated on
-  Mon Feb 20 2012 12:10:09 GMT+0100 (CET)
+  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.3.0
-  (Node.js v0.6.10).
+  v0.4.1
+  (Node.js v0.6.11).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

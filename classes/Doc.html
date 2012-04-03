@@ -13,18 +13,16 @@
     <span class='title'>Doc</span>
     <nav>
       <ul>
-        <li class='frames'>
-          (<a class='frames' href='../frames.html'>frames</a>)
-        </li>
         <li class='noframes'>
           (<a class='noframes' href='#'>no frames</a>)
         </li>
       </ul>
     </nav>
     <div id='search'>
-      <a id='class_list_link' href='../class_list.html'>Class List</a>
-      <a id='method_list_link' href='../method_list.html'>Method List</a>
-      <a id='file_list_link' href='../file_list.html'>File List</a>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='class_list_link' href='../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -39,14 +37,16 @@
           <td>Defined in:</td>
           <td>src/nodes/doc.coffee</td>
         </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href="../classes/Node.html">Node</a>
+          </td>
+        </tr>
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>A documentation node is responsible for parsing
-the comments for known tags.
-
-</p>
-
+  <p>A documentation node is responsible for parsing the comments for known tags. </p> 
 </div>
 <div class='tags'>
 </div>
@@ -55,12 +55,22 @@ the comments for known tags.
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(node, clazz, options)
+        - (void) <strong>constructor</strong>(node, options)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
     <span class='desc'>
       Construct a documentation
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#parseTags-instance'>
+        - (void) <strong>parseTags</strong>(lines)
+      </a>
+    </span>
+    <span class='desc'>
+      Parse the given lines and adds the result to the result object.
     </span>
   </li>
   <li>
@@ -74,18 +84,24 @@ the comments for known tags.
     </span>
   </li>
 </ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+      </h2>
+      <h3 class='inherited'>
+        Methods inherited from
+        <a href="../classes/Node.html">Node</a>
+      </h3>
+      <p class='inherited'>
+        <a href="../classes/Node.html#findAncestor-instance">#findAncestor</a>
+      </p>
       <h2>Constructor Details</h2>
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(node, clazz, options)
+      - (void) <strong>constructor</strong>(node, options)
     </p>
     <div class='docstring'>
-  <p>Construct a documentation
-
-
-</p>
-
+  <p>Construct a documentation </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -97,14 +113,6 @@ the comments for known tags.
       </span>
       &mdash;
       <span class='desc'>the comment node</span>
-    </li>
-    <li>
-      <span class='name'>clazz</span>
-      <span class='type'>
-        (<tt><a href='../classes/Class.html'>Class</a></tt>)
-      </span>
-      &mdash;
-      <span class='desc'>the class context</span>
     </li>
     <li>
       <span class='name'>options</span>
@@ -121,15 +129,32 @@ the comments for known tags.
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
+    <p class='signature' id='parseTags-instance'>
+      - (void) <strong>parseTags</strong>(lines)
+    </p>
+    <div class='docstring'>
+  <p>Parse the given lines and adds the result to the result object. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>lines</span>
+      <span class='type'>
+        (<tt>Array<String></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the lines to parse</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
     <p class='signature' id='toJSON-instance'>
       - (Object) <strong>toJSON</strong>()
     </p>
     <div class='docstring'>
-  <p>Get a JSON representation of the object
-
-
-</p>
-
+  <p>Get a JSON representation of the object </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -148,11 +173,11 @@ the comments for known tags.
     </div>
     <div id='footer'>
   Generated on
-  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
+  Tue Apr 03 2012 19:23:40 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.4.1
-  (Node.js v0.6.11).
+  v0.6.0
+  (Node.js v0.6.14).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

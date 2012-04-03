@@ -13,184 +13,53 @@
     <span class='title'>README.md</span>
     <nav>
       <ul>
-        <li class='frames'>
-          (<a class='frames' href='frames.html'>frames</a>)
-        </li>
         <li class='noframes'>
           (<a class='noframes' href='#'>no frames</a>)
         </li>
       </ul>
     </nav>
     <div id='search'>
-      <a id='class_list_link' href='class_list.html'>Class List</a>
-      <a id='method_list_link' href='method_list.html'>Method List</a>
-      <a id='file_list_link' href='file_list.html'>File List</a>
+      <a id='class_list_link' href='class_list.html'>Classes</a>
+      <a id='class_list_link' href='mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='file_list_link' href='file_list.html'>Files</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
 </div>
     <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
       <div id='filecontents'>
-        <h1>Codo <a href="http://travis-ci.org/netzpirat/codo.png"><img src="https://secure.travis-ci.org/netzpirat/codo.png" alt="Build Status"></a></h1>
+        <h1>Codo <a href="http://travis-ci.org/netzpirat/codo"><img src="https://secure.travis-ci.org/netzpirat/codo.png" alt="Build Status"></a></h1>
 <p>Codo is a <a href="http://coffeescript.org/">CoffeeScript</a> API documentation generator, similar to <a href="http://yardoc.org/">YARD</a>.
 Its generated documentation is focused on CoffeeScript class syntax for classical inheritance and not for JavaScript&#39;s
 prototypal inheritance.
 
 </p>
-<h2>Codo in action</h2>
-<p>You can browse the <a href="http://netzpirat.github.com/codo">Codo documentation</a>, which contains a sample class
-<a href="http://netzpirat.github.com/codo/classes/Example/Animal.html">Example.Animal</a> that makes use of all available tags.
-In addition, there&#39;s a list of
-<a href="https://github.com/netzpirat/codo/wiki/List-of-codo-generated-documentations">Codo generated documentations</a>
-in the wiki.
-
-</p>
-<h2>Installation</h2>
-<p>Codo is available in NPM and can be installed with:
-
-</p>
-<pre><code class="bash">$ npm install -g codo</code></pre>
-<h2>Tags</h2>
-<p>Codo comments are rendered as <a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a>
-and can be tagged to add more structured information to class and method comments.
-
-</p>
-<p><em>Tags can take multiple lines, just indent subsequent lines by two spaces.</em>
-
-</p>
-<h3>Overview</h3>
-<p><table>
-  <thead>
-    <tr>
-      <td><strong>Tag format</strong></td>
-      <td><strong>Multiple occurrences</strong></td>
-      <td><strong>Class level</strong></td>
-      <td><strong>Method level</strong></td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>@abstract</strong> (message)</td>
-      <td></td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@author</strong> name</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@deprecated</strong></td>
-      <td></td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@example</strong> (title)<br/>&nbsp;&nbsp;Code</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@note</strong> message</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@option</strong> option [type] name description</td>
-      <td>&#10004;</td>
-      <td></td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td>
-        <strong>@param</strong> [type] name description<br/>
-        <strong>@param</strong> name [type] description<br/>
-      </td>
-      <td>&#10004;</td>
-      <td></td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@private</strong></td>
-      <td></td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@return</strong> [type] description</td>
-      <td></td>
-      <td></td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@see</strong> link/reference</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@since</strong> version</td>
-      <td></td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@todo</strong> message</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-    <tr>
-      <td><strong>@version</strong> version</td>
-      <td></td>
-      <td>&#10004;</td>
-      <td>&#10004;</td>
-    </tr>
-  </tbody>
-</p>
-<table>
-
-<h3>References</h3>
-<p>Class/method comments and all tags texts will be parsed for references to other classes/methods and are linked
-automatically. You can use:
-
-</p>
+<h2>Features</h2>
 <ul>
-<li>Normal links, e.g. <code>{http://coffeescript.org/}</code></li>
-<li>Link to a class, e.g. <code>{Animal.Lion}</code></li>
-<li>Link to an instance method, e.g. <code>{Animal.Lion#walk}</code></li>
-<li>Link to a class method, e.g. <code>{Animal.Lion.constructor}</code></li>
+<li>Detects classes, methods, constants, mixins &amp; concerns.</li>
+<li>Many tags to add semantics to your code.</li>
+<li>Generates a nice site to browse your code documentation in various ways.</li>
 </ul>
-<p>If you are referring to a method within the same class, you can omit the class name, like <code>{#walk}</code>. You can set an
-explicit label for the link by adding the label after the reference, e.g. <code>{#walk The lion walks}</code>.
+<h2>Codo in action</h2>
+<p>Annotate your source with Codo tags to add semantic information to your code. It looks like this:
 
 </p>
-<p>The <code>@see</code> tag supports the same linking, just without the curly braces, e.g.
-<code>@see http://en.wikipedia.org/wiki/Lion The wikipedia page about lions</code>
-
-</p>
-<h3>Example</h3>
 <pre><code class="CoffeeScript"># Base class for all animals.
-#
-# @note This is not used for codo, its purpose is to show
-#   all possible tags within a class.
-#
-# @todo Provide more examples
 #
 # @example How to subclass an animal
 #   class Lion extends Animal
 #     move: (direction, speed): -&gt;
-#
-# @abstract Each animal implementation must inherit from {Animal}
-#
-# @author Michael Kessler
-# @deprecated This class is not used anymore
-# @version 0.2.0
-# @since 0.1.0
 #
 class Example.Animal
 
@@ -199,7 +68,6 @@ class Example.Animal
 
   # Construct a new animal.
   #
-  # @todo Clean up
   # @param [String] name the name of the animal
   # @param [Date] birthDate when the animal was born
   #
@@ -210,32 +78,388 @@ class Example.Animal
   # @example Move an animal
   #   new Lion(&#39;Simba&#39;).move(&#39;south&#39;, 12)
   #
-  # @abstract
   # @param [Object] options the moving options
   # @option options [String] direction the moving direction
   # @option options [Number] speed the speed in mph
   #
-  move: (options = {}) -&gt;
+  move: (options = {}) -&gt;</code></pre>
+<p>Then generate the documentation with the <code>codo</code> command line tool. You can browse the
+<a href="http://netzpirat.github.com/codo">generated Codo documentation</a> to get a feeling how you can navigate in various
+ways through your code layers.
 
-  # Copulate another animal.
-  #
-  # @note Don&#39;t take it seriously
-  #
-  # @private
-  # @author Michael Kessler
-  # @param [Animal] animal the partner animal
-  # @return [Boolean] true when success
-  # @deprecated Do not copulate
-  # @version 0.2.0
-  # @since 0.1.0
-  #
-  copulate: (animal) =&gt;
+</p>
+<p>In the <code>Example</code> namespace you&#39;ll find some classes and mixins that makes absolutely no sense, its purpose is only to
+show the many features Code offers. In addition, there&#39;s a list of
+<a href="https://github.com/netzpirat/codo/wiki/List-of-codo-generated-documentations">Codo generated documentations</a>
+in the wiki. <em>Please add your project if you&#39;re using Codo. Thanks!</em>
 
-  # Moves all animal into the ark.
+</p>
+<h2>Installation</h2>
+<p>Codo is available in NPM and can be installed with:
+
+</p>
+<pre><code class="bash">$ npm install -g codo</code></pre>
+<p>Please have a look at the <a href="https://github.com/netzpirat/codo/blob/master/CHANGELOG.md">CHANGELOG</a> when upgrading to a
+newer Codo version with <code>npm update</code>.
+
+</p>
+<h2>Tags</h2>
+<p>You have to annotate your code with Codo tags to give it some meaning to the parser that generates the documentation.
+Each tag starts with the <code>@</code> sign followed by the tag name. See the following overview for a minimal description of all
+available tags. Most tags are self-explaining and the one that aren&#39;t are described afterwards in more detail.
+
+</p>
+<p>Tags can take multiple lines, just indent subsequent lines by two spaces. It&#39;s also possible to use
+<a href="http://coffeescript.org/#strings">CoffeeScript block comments</a> instead of the normal comments.
+
+</p>
+<h3>Overview</h3>
+<p>The following table shows the list of all available tags in alphabetical order with its expected options. An option in
+parenthesis is optional and the square brackets are part of the Codo tag format and must actually be written. Some tags
+can be defined multiple times and they can be applied to different contexts, either in the comment for a class, a
+comment for a mixin or in a method comment.
+
+</p>
+<p><table>
+  <thead>
+    <tr>
+      <td><strong>Tag format</strong></td>
+      <td><strong>Multiple occurrences</strong></td>
+      <td><strong>Classes</strong></td>
+      <td><strong>Mixins</strong></td>
+      <td><strong>Methods</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>@abstract</strong> (message)</td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@author</strong> name</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@concern</strong> mixin</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>@copyright</strong> name</td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@deprecated</strong></td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@example</strong> (title)<br/>&nbsp;&nbsp;Code</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@extend</strong> mixin</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>@include</strong> mixin</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>@note</strong> message</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@method</strong> signature<br/>&nbsp;&nbsp;Method tags</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>@mixin</strong> version</td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><strong>@option</strong> option [type] name description</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@overload</strong> signature<br/>&nbsp;&nbsp;Method tags</td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>@param</strong> [type] name description<br/>
+        <strong>@param</strong> name [type] description<br/>
+      </td>
+      <td>&#10004;</td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@private</strong></td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@return</strong> [type] description</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@see</strong> link/reference</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@since</strong> version</td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@todo</strong> message</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+    <tr>
+      <td><strong>@version</strong> version</td>
+      <td></td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+      <td>&#10004;</td>
+    </tr>
+  </tbody>
+</p>
+<table>
+
+<h3>Parameters</h3>
+<p>There are two different format recognized for your parameters, so you can chose your favorite. This one is with the
+parameter after the parameter type:
+
+</p>
+<pre><code class="CoffeeScript"># Feed the animal
+#
+# @param [World.Food] food the food to eat
+#
+feed: (food) -&gt;</code></pre>
+<p>And this one with the name before the type:
+
+</p>
+<pre><code class="CoffeeScript"># Feed the animal
+#
+# @param food [World.Food] the food to eat
+#
+feed: (food) -&gt;</code></pre>
+<h3>Options</h3>
+<p>If you have an object as parameter and you like to defined the accepted properties as options to the method, you can
+use the <code>@options</code> tag:
+
+
+</p>
+<pre><code class="CoffeeScript"># Feed the animal
+#
+# @param [Object] options the calculation options
+# @option options [Integer] age the age of the animal
+# @option options [Integer] weigth the weight of the animal
+#
+expectationOfLife: (options) -&gt;</code></pre>
+<p>The first parameter to the option tag is the parameter name it describes, followed by the parameter type, name and
+description.
+
+</p>
+<h3>Types</h3>
+<p>The object types for the <code>@param</code>, <code>@option</code> and <code>@return</code> tags are parsed for known classes or mixins and linked. You
+can also define types for Arrays with:
+
+</p>
+<pre><code class="CoffeeScript">#
+# @param [World.Region] region the region of the herd
+# @return [Array&lt;Animals&gt;] the animals in the herd
+#
+getHerdMembers: (regions) -&gt;</code></pre>
+<h3>Method overloading</h3>
+<p>If you allow your method to take different parameters, you can describe the method overloading with the <code>@overload</code> tag:
+
+</p>
+<pre><code class="CoffeeScript"># This is a generic Store set method.
+#
+# @overload set(key, value)
+#   Sets a value on key
+#   @param [Symbol] key describe key param
+#   @param [Object] value describe value param
+#
+# @overload set(value)
+#   Sets a value on the default key `:foo`
+#   @param [Object] value describe value param
+#   @return [Boolean] true when success
+#
+set: (args...) -&gt;</code></pre>
+<p>The <code>@overload</code> tag must be followed by the alternative method signature that will appear in the documentation, followed
+by any method tag indented by two spaces.
+
+</p>
+<h3>Virtual methods</h3>
+<p>If you copy over functions from other objects without using mixins or concerns, you can add documentation for this
+virtual (or dynamic) method with the <code>@method</code> tag:
+
+</p>
+<pre><code class="CoffeeScript"># This class has a virtual method, that doesn&#39;t
+# exist in the source but appears in the documentation.
+#
+# @method #set(key, value)
+#   Sets a value on key
+#   @param [Symbol] key describe key param
+#   @param [Object] value describe value param
+#
+class VirtualMethods</code></pre>
+<p>The <code>@method</code> tag must be followed by the method signature that will appear in the documentation, followed
+by any method tag indented by two spaces. The difference to the <code>@overload</code> tag beside the differnt context, that
+the signature should contain either the instance prefix <code>#</code> or the class prefix <code>.</code>.
+
+</p>
+<h3>Mixins</h3>
+<p>It&#39;s common practice to mix in objects to share common logic when inheritance is not suited. You can read
+more about mixins in the
+<a href="http://arcturo.github.com/library/coffeescript/03_classes.html">The Little Book on CoffeeScript</a>.
+
+</p>
+<p>Simply mark any plain CoffeeScript object with the <code>@mixin</code> tag to have a mixin page generated that supports many tags:
+
+</p>
+<pre><code class="CoffeeScript"># Speed calculation for animal.
+#
+# @mixin
+# @author Rockstar Ninja
+#
+Example.Animal.Speed =
+
+  # Get the distance the animal will put back in a certain time.
   #
-  # @return [Boolean] true when all in Ark
+  # @param [Integer] time Number of seconds
+  # @return [Integer] The distance in miles
   #
-  @enterArk: -&gt;</code></pre>
+  distance: (time) -&gt;</code></pre>
+<p>Next mark the target object that includes one or multiple mixins:
+
+</p>
+<pre><code class="CoffeeScript"># @include Example.Animal.Speed
+class Example.Animal.Lion</code></pre>
+<p>and you&#39;ll see the mixin methods appear as instance methods in the lion class documentation.
+You can also extend a mixin:
+
+</p>
+<pre><code class="CoffeeScript"># @extend Example.Animal.Speed
+class Example.Animal.Lion</code></pre>
+<p>so its methods will show up as class methods.
+
+</p>
+<h4>Concerns</h4>
+<p>A concern is a combination of two mixins, one for instance methods and the other for class methods and it&#39;s
+automatically detected when a mixin has both a <code>ClassMethods</code> and an <code>InstanceMethods</code> property:
+
+</p>
+<pre><code class="CoffeeScript"># Speed calculations for animal.
+#
+# @mixin
+# @author Rockstar Ninja
+#
+Example.Animal.Speed =
+
+  InstanceMethods:
+
+    # Get the distance the animal will put back in a certain time.
+    #
+    # @param [Integer] time Number of seconds
+    # @return [Integer] The distance in miles
+    #
+    distance: (time) -&gt;
+
+  ClassMethods:
+
+    # Get the common speed of the animal in MPH.
+    #
+    # @param [Integer] age The age of the animal
+    # @return [Integer] The speed in MPH
+    #
+    speed: (age) -&gt;</code></pre>
+<p>You can use <code>@concern</code> to include and extend the correspondent properties:
+
+</p>
+<pre><code class="CoffeeScript"># @concern Example.Animal.Speed
+class Example.Animal.Lion</code></pre>
+<h2>Text processing</h2>
+<h3>GitHub Flavored Markdown</h3>
+<p>Codo comments and extra files written in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax are rendered as
+<a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a>.
+
+</p>
+<h3>Automatically link references</h3>
+<p>Codo comments and all tag texts will be parsed for references to other classes, methods and mixins and are automatically
+linked.
+
+</p>
+<p>There are several ways of link types supported and all can take an optional label after the link.
+
+</p>
+<ul>
+<li>Normal URL links: <code>{http://coffeescript.org/}</code> or <code>{http://coffeescript.org/ Try CoffeeScript}</code></li>
+<li>Link to a class or mixin: <code>{Animal.Lion}</code> or <code>{Animal.Lion The might lion}</code></li>
+<li>Direct link to an instance method: <code>{Animal.Lion#walk}</code> or <code>{Animal.Lion#walk The lion walks}</code></li>
+<li>Direct link to a class method: <code>{Animal.Lion.constructor}</code> or <code>{Animal.Lion.constructor} A new king was born</code></li>
+</ul>
+<p>If you are referring to a method within the same class, you can omit the class name: <code>{#walk}</code>.
+
+</p>
+<p>The <code>@see</code> tag supports the same link types, just without the curly braces:
+
+</p>
+<pre><code class="CoffeeScript">@see http://en.wikipedia.org/wiki/Lion The wikipedia page about lions</code></pre>
 <h2>Generate</h2>
 <p>After the installation you will have a <code>codo</code> binary that can be used to generate the documentation recursively for all
 CoffeeScript files within a directory.
@@ -265,6 +489,11 @@ Options:
 -
 LICENSE
 CHANGELOG.md</code></pre>
+<p>Put each option flag on a separate line, followed by the source directories or files, and optionally any extra file that
+should be included into the documentation separated by a dash (<code>-</code>). If your extra file has the extension <code>.md</code>, it&#39;ll
+be rendered as Markdown.
+
+</p>
 <h2>Report issues</h2>
 <p>Issues hosted at <a href="https://github.com/netzpirat/codo/issues">GitHub Issues</a>.
 
@@ -305,17 +534,15 @@ dynamic programming languages.</li>
 <li><a href="https://github.com/micmath/jsdoc">JsDoc</a> an automatic documentation generator for JavaScript.</li>
 <li><a href="https://github.com/visionmedia/dox">Dox</a> JavaScript documentation generator for node using markdown and jsdoc.</li>
 </ul>
-<h2>Contributors</h2>
-<ul>
-<li><a href="https://github.com/inossidabile">Boris Staal</a></li>
-</ul>
 <h2>Author</h2>
 <ul>
-<li><a href="https://github.com/netzpirat">Michael Kessler</a> (<a href="http://twitter.com/#!/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat">Michael Kessler</a> (<a href="http://twitter.com/#!/netzpirat">@netzpirat</a>, <a href="https://mksoft.ch">mksoft.ch</a>)</li>
 </ul>
-<p>Development is sponsored by <a href="https://mksoft.ch">mksoft.ch</a>.
-
-</p>
+<h2>Contributors</h2>
+<ul>
+<li><a href="https://github.com/inossidabile">Boris Staal</a> (<a href="http://twitter.com/#!/_inossidabile">@_inossidabile</a>)</li>
+<li><a href="https://github.com/mattijs">Mattijs Hoitink</a></li>
+</ul>
 <h2>License</h2>
 <p>(The MIT License)
 
@@ -349,11 +576,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </div>
     <div id='footer'>
   Generated on
-  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
+  Tue Apr 03 2012 19:23:40 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.4.1
-  (Node.js v0.6.11).
+  v0.6.0
+  (Node.js v0.6.14).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

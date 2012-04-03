@@ -10,7 +10,7 @@
   <div id='menu'>
     <a href='../class_index.html' title='Index'>Index</a>
     &raquo;
-    <span class='title'>Method</span>
+    <span class='title'>Mixin</span>
     <nav>
       <ul>
         <li class='noframes'>
@@ -30,12 +30,12 @@
     <div id='content'>
       <h1>
         Class:
-        Method
+        Mixin
       </h1>
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>src/nodes/method.coffee</td>
+          <td>src/nodes/mixin.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
@@ -46,7 +46,7 @@
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>A CoffeeScript method </p> 
+  <p>A CoffeeScript mixins </p> 
 </div>
 <div class='tags'>
 </div>
@@ -55,22 +55,22 @@
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(entity, node, options, comment)
+        - (void) <strong>constructor</strong>(node, fileName, options, comment)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
     <span class='desc'>
-      Construct a method
+      Construct a mixin
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getType-instance'>
-        - (String) <strong>getType</strong>()
+      <a href='#getFileName-instance'>
+        - (String) <strong>getFileName</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the method type, either `class` or `instance`
+      Get the source file name.
     </span>
   </li>
   <li>
@@ -80,27 +80,27 @@
       </a>
     </span>
     <span class='desc'>
-      Get the class doc
+      Get the mixin doc
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getSignature-instance'>
-        - (String) <strong>getSignature</strong>()
+      <a href='#getMixinName-instance'>
+        - (String) <strong>getMixinName</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the full method signature.
+      Get the full mixin name
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getShortSignature-instance'>
-        - (String) <strong>getShortSignature</strong>()
+      <a href='#getFullName-instance'>
+        - (void) <strong>getFullName</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the short method signature.
+      Alias for <a href='../classes/Mixin.html#getMixinName-instance'>Mixin#getMixinName</a>
     </span>
   </li>
   <li>
@@ -110,37 +110,37 @@
       </a>
     </span>
     <span class='desc'>
-      Get the method name
+      Get the mixin name
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getParameters-instance'>
-        - (void) <strong>getParameters</strong>()
+      <a href='#getNamespace-instance'>
+        - (String) <strong>getNamespace</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the method parameters
+      Get the mixin namespace
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getCoffeeScriptSource-instance'>
-        - (String) <strong>getCoffeeScriptSource</strong>()
+      <a href='#getMethods-instance'>
+        - (Array&lt;Method&gt;) <strong>getMethods</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the method source in CoffeeScript
+      Get all methods.
     </span>
   </li>
   <li>
     <span class='signature'>
-      <a href='#getJavaScriptSource-instance'>
-        - (String) <strong>getJavaScriptSource</strong>()
+      <a href='#getVariables-instance'>
+        - (Array&lt;Variable&gt;) <strong>getVariables</strong>()
       </a>
     </span>
     <span class='desc'>
-      Get the method source in JavaScript
+      Get all variables.
     </span>
   </li>
   <li>
@@ -168,29 +168,29 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(entity, node, options, comment)
+      - (void) <strong>constructor</strong>(node, fileName, options, comment)
     </p>
     <div class='docstring'>
-  <p>Construct a method </p> 
+  <p>Construct a mixin </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
   <ul class='param'>
-    <li>
-      <span class='name'>entity</span>
-      <span class='type'>
-        (<tt><a href='../classes/Class.html'>Class</a></tt>)
-      </span>
-      &mdash;
-      <span class='desc'>the methods class</span>
-    </li>
     <li>
       <span class='name'>node</span>
       <span class='type'>
         (<tt>Object</tt>)
       </span>
       &mdash;
-      <span class='desc'>the node</span>
+      <span class='desc'>the mixin node</span>
+    </li>
+    <li>
+      <span class='name'>the</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>filename</span>
     </li>
     <li>
       <span class='name'>options</span>
@@ -215,11 +215,11 @@
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='getType-instance'>
-      - (String) <strong>getType</strong>()
+    <p class='signature' id='getFileName-instance'>
+      - (String) <strong>getFileName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the method type, either <code>class</code> or <code>instance</code> </p> 
+  <p>Get the source file name. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -229,7 +229,7 @@
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the method type</span>
+      <span class='desc'>the filename of the mixin</span>
     </li>
   </ul>
 </div>
@@ -239,7 +239,7 @@
       - (Doc) <strong>getDoc</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the class doc </p> 
+  <p>Get the mixin doc </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -249,17 +249,17 @@
         (<tt><a href='../classes/Doc.html'>Doc</a></tt>)
       </span>
       &mdash;
-      <span class='desc'>the class doc</span>
+      <span class='desc'>the mixin doc</span>
     </li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='getSignature-instance'>
-      - (String) <strong>getSignature</strong>()
+    <p class='signature' id='getMixinName-instance'>
+      - (String) <strong>getMixinName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the full method signature. </p> 
+  <p>Get the full mixin name </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -269,29 +269,19 @@
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the signature</span>
+      <span class='desc'>full mixin name</span>
     </li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='getShortSignature-instance'>
-      - (String) <strong>getShortSignature</strong>()
+    <p class='signature' id='getFullName-instance'>
+      - (void) <strong>getFullName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the short method signature. </p> 
+  <p>Alias for <a href='../classes/Mixin.html#getMixinName-instance'>Mixin#getMixinName</a> </p> 
 </div>
 <div class='tags'>
-  <h3>Returns:</h3>
-  <ul class='return'>
-    <li>
-      <span class='type'>
-        (<tt>String</tt>)
-      </span>
-      &mdash;
-      <span class='desc'>the short signature</span>
-    </li>
-  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -299,7 +289,7 @@
       - (String) <strong>getName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the method name </p> 
+  <p>Get the mixin name </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -309,38 +299,17 @@
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the method name</span>
+      <span class='desc'>the name</span>
     </li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='getParameters-instance'>
-      - (void) <strong>getParameters</strong>()
+    <p class='signature' id='getNamespace-instance'>
+      - (String) <strong>getNamespace</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the method parameters </p> 
-</div>
-<div class='tags'>
-  <h3>Parameters:</h3>
-  <ul class='param'>
-    <li>
-      <span class='name'>the</span>
-      <span class='type'>
-        (<tt>Array<<a href='../classes/Parameter.html'>Parameter</a>></tt>)
-      </span>
-      &mdash;
-      <span class='desc'>method parameters</span>
-    </li>
-  </ul>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='getCoffeeScriptSource-instance'>
-      - (String) <strong>getCoffeeScriptSource</strong>()
-    </p>
-    <div class='docstring'>
-  <p>Get the method source in CoffeeScript </p> 
+  <p>Get the mixin namespace </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -350,27 +319,47 @@
         (<tt>String</tt>)
       </span>
       &mdash;
-      <span class='desc'>the CoffeeScript source</span>
+      <span class='desc'>the namespace</span>
     </li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='getJavaScriptSource-instance'>
-      - (String) <strong>getJavaScriptSource</strong>()
+    <p class='signature' id='getMethods-instance'>
+      - (Array&lt;Method&gt;) <strong>getMethods</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the method source in JavaScript </p> 
+  <p>Get all methods. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
   <ul class='return'>
     <li>
       <span class='type'>
-        (<tt>String</tt>)
+        (<tt>Array<<a href='../classes/Method.html'>Method</a>></tt>)
       </span>
       &mdash;
-      <span class='desc'>the JavaScript source</span>
+      <span class='desc'>the methods</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getVariables-instance'>
+      - (Array&lt;Variable&gt;) <strong>getVariables</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Get all variables. </p> 
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Array<<a href='../classes/Variable.html'>Variable</a>></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the variables</span>
     </li>
   </ul>
 </div>

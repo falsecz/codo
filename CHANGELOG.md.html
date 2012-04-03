@@ -13,25 +13,57 @@
     <span class='title'>CHANGELOG.md</span>
     <nav>
       <ul>
-        <li class='frames'>
-          (<a class='frames' href='frames.html'>frames</a>)
-        </li>
         <li class='noframes'>
           (<a class='noframes' href='#'>no frames</a>)
         </li>
       </ul>
     </nav>
     <div id='search'>
-      <a id='class_list_link' href='class_list.html'>Class List</a>
-      <a id='method_list_link' href='method_list.html'>Method List</a>
-      <a id='file_list_link' href='file_list.html'>File List</a>
+      <a id='class_list_link' href='class_list.html'>Classes</a>
+      <a id='class_list_link' href='mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='file_list_link' href='file_list.html'>Files</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
 </div>
     <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
       <div id='filecontents'>
-        <h1>Version 0.4.1 - February 26, 2012</h1>
+        <h1>Version 0.6.0 - April 3, 2012</h1>
+<ul>
+<li>Implement <code>@method</code> tag.</li>
+<li><a href="https://github.com/netzpirat/codo/issues/19">#19</a>:  Implement <code>@overload</code> tag. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li>Add <code>@concern</code> as mixin specialization with defined class and instance methods. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/17">#17</a>:  Implement <code>@param</code> reference tags. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/36">#36</a>:  Make the example title optional. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li>Rename <code>@module</code> to <code>@mixin</code> to avoid confusion with Node.js modules. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/30">#30</a>:  Make the frames view the default. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/35">#35</a>:  Links aren&#39;t working on Class/Module List dropdown for parent nodes. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/15">#15</a>: Generate a TOC for file contents. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li>Detect inner (nested) classes. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/34">#34</a>: Fix label assignment in references. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/pull/28">#28</a>: Description for <code>@param</code> and <code>@option</code> is now optional. (<a href="https://github.com/mattijs">@mattijs</a>)</li>
+</ul>
+<h1>Version 0.5.0 - March 15, 2012</h1>
+<ul>
+<li><a href="https://github.com/netzpirat/codo/pull/27">#27</a>: Added support for <code>@copyright</code> tag. (<a href="https://github.com/mattijs">@mattijs</a>)</li>
+<li><a href="https://github.com/netzpirat/codo/issues/25">#25</a>: Exclude functions internal to the class closure. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
+</ul>
+<h1>Version 0.4.2 - February 27, 2012</h1>
+<ul>
+<li><a href="https://github.com/netzpirat/codo/pull/24">#24</a>: Fix private method filter. (<a href="https://github.com/Squeegy">@Squeegy</a>)</li>
+</ul>
+<h1>Version 0.4.1 - February 26, 2012</h1>
 <ul>
 <li>Make the doc reference resolver more fail safe. (<a href="https://github.com/netzpirat">@netzpirat</a>)</li>
 </ul>
@@ -70,11 +102,11 @@
     </div>
     <div id='footer'>
   Generated on
-  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
+  Tue Apr 03 2012 19:23:40 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.4.1
-  (Node.js v0.6.11).
+  v0.6.0
+  (Node.js v0.6.14).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

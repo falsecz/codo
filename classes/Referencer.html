@@ -13,18 +13,16 @@
     <span class='title'>Referencer</span>
     <nav>
       <ul>
-        <li class='frames'>
-          (<a class='frames' href='../frames.html'>frames</a>)
-        </li>
         <li class='noframes'>
           (<a class='noframes' href='#'>no frames</a>)
         </li>
       </ul>
     </nav>
     <div id='search'>
-      <a id='class_list_link' href='../class_list.html'>Class List</a>
-      <a id='method_list_link' href='../method_list.html'>Method List</a>
-      <a id='file_list_link' href='../file_list.html'>File List</a>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='class_list_link' href='../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -42,10 +40,7 @@
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>Class reference resolver.
-
-</p>
-
+  <p>Class reference resolver. </p> 
 </div>
 <div class='tags'>
 </div>
@@ -54,7 +49,7 @@
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(classes, options)
+        - (void) <strong>constructor</strong>(classes, mixins, options)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
@@ -84,6 +79,46 @@
   </li>
   <li>
     <span class='signature'>
+      <a href='#getIncludedMethods-instance'>
+        - (Object) <strong>getIncludedMethods</strong>(clazz)
+      </a>
+    </span>
+    <span class='desc'>
+      Get all included mixins in the class hierarchy.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getExtendedMethods-instance'>
+        - (Object) <strong>getExtendedMethods</strong>(clazz)
+      </a>
+    </span>
+    <span class='desc'>
+      Get all extended mixins in the class hierarchy.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getConcernMethods-instance'>
+        - (Object) <strong>getConcernMethods</strong>(clazz)
+      </a>
+    </span>
+    <span class='desc'>
+      Get all concerns
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#resolveMixinMethods-instance'>
+        - (Array&lt;Methods&gt;) <strong>resolveMixinMethods</strong>(name)
+      </a>
+    </span>
+    <span class='desc'>
+      Get a list of all methods from the given mixin name
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
       <a href='#getInheritedVariables-instance'>
         - (Array&lt;Variable&gt;) <strong>getInheritedVariables</strong>(clazz)
       </a>
@@ -105,11 +140,11 @@
   <li>
     <span class='signature'>
       <a href='#linkTypes-instance'>
-        - (String) <strong>linkTypes</strong>(text, path)
+        - (String) <strong>linkTypes</strong>(text = '', path)
       </a>
     </span>
     <span class='desc'>
-      Create browsable links for known class types.
+      Create browsable links for known entities.
     </span>
   </li>
   <li>
@@ -125,7 +160,7 @@
   <li>
     <span class='signature'>
       <a href='#resolveDoc-instance'>
-        - (Object) <strong>resolveDoc</strong>(data, clazz, path)
+        - (Object) <strong>resolveDoc</strong>(data, entity, path)
       </a>
     </span>
     <span class='desc'>
@@ -135,7 +170,7 @@
   <li>
     <span class='signature'>
       <a href='#resolveTextReferences-instance'>
-        - (String) <strong>resolveTextReferences</strong>(text, clazz, path)
+        - (String) <strong>resolveTextReferences</strong>(text = '', entity, path)
       </a>
     </span>
     <span class='desc'>
@@ -145,11 +180,21 @@
   <li>
     <span class='signature'>
       <a href='#resolveSee-instance'>
-        - (Object) <strong>resolveSee</strong>(see, clazz, path)
+        - (Object) <strong>resolveSee</strong>(see, entity, path)
       </a>
     </span>
     <span class='desc'>
       Resolves a @see link.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#resolveParamReferences-instance'>
+        - (void) <strong>resolveParamReferences</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Resolve parameter references.
     </span>
   </li>
 </ul>
@@ -157,14 +202,10 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(classes, options)
+      - (void) <strong>constructor</strong>(classes, mixins, options)
     </p>
     <div class='docstring'>
-  <p>Construct a referencer.
-
-
-</p>
-
+  <p>Construct a referencer. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -176,6 +217,14 @@
       </span>
       &mdash;
       <span class='desc'>all known classes</span>
+    </li>
+    <li>
+      <span class='name'>mixins</span>
+      <span class='type'>
+        (<tt>Array<Classes></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>all known mixins</span>
     </li>
     <li>
       <span class='name'>options</span>
@@ -196,11 +245,7 @@
       - (Array&lt;Class&gt;) <strong>getDirectSubClasses</strong>(clazz)
     </p>
     <div class='docstring'>
-  <p>Get all direct subclasses.
-
-
-</p>
-
+  <p>Get all direct subclasses. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -231,11 +276,7 @@
       - (Array&lt;Method&gt;) <strong>getInheritedMethods</strong>(clazz)
     </p>
     <div class='docstring'>
-  <p>Get all inherited methods.
-
-
-</p>
-
+  <p>Get all inherited methods. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -262,15 +303,135 @@
 </div>
   </div>
   <div class='method_details'>
+    <p class='signature' id='getIncludedMethods-instance'>
+      - (Object) <strong>getIncludedMethods</strong>(clazz)
+    </p>
+    <div class='docstring'>
+  <p>Get all included mixins in the class hierarchy. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the mixins</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getExtendedMethods-instance'>
+      - (Object) <strong>getExtendedMethods</strong>(clazz)
+    </p>
+    <div class='docstring'>
+  <p>Get all extended mixins in the class hierarchy. </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the mixins</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getConcernMethods-instance'>
+      - (Object) <strong>getConcernMethods</strong>(clazz)
+    </p>
+    <div class='docstring'>
+  <p>Get all concerns </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>clazz</span>
+      <span class='type'>
+        (<tt><a href='../classes/Class.html'>Class</a></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the class</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the concerns</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='resolveMixinMethods-instance'>
+      - (Array&lt;Methods&gt;) <strong>resolveMixinMethods</strong>(name)
+    </p>
+    <div class='docstring'>
+  <p>Get a list of all methods from the given mixin name </p> 
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>name</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the full name of the mixin</span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>Array<Methods></tt>)
+      </span>
+      &mdash;
+      <span class='desc'>the mixin methods</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
     <p class='signature' id='getInheritedVariables-instance'>
       - (Array&lt;Variable&gt;) <strong>getInheritedVariables</strong>(clazz)
     </p>
     <div class='docstring'>
-  <p>Get all inherited variables.
-
-
-</p>
-
+  <p>Get all inherited variables. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -301,11 +462,7 @@
       - (Array&lt;Variable&gt;) <strong>getInheritedConstants</strong>(clazz)
     </p>
     <div class='docstring'>
-  <p>Get all inherited constants.
-
-
-</p>
-
+  <p>Get all inherited constants. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -333,15 +490,10 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='linkTypes-instance'>
-      - (String) <strong>linkTypes</strong>(text, path)
+      - (String) <strong>linkTypes</strong>(text = '', path)
     </p>
     <div class='docstring'>
-  <p>Create browsable links for known class types.
-
-
-
-</p>
-
+  <p>Create browsable links for known entities. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -386,11 +538,7 @@
       - (undefined, String) <strong>getLink</strong>(classname, path)
     </p>
     <div class='docstring'>
-  <p>Get the link to classname.
-
-
-</p>
-
+  <p>Get the link to classname. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -432,14 +580,10 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='resolveDoc-instance'>
-      - (Object) <strong>resolveDoc</strong>(data, clazz, path)
+      - (Object) <strong>resolveDoc</strong>(data, entity, path)
     </p>
     <div class='docstring'>
-  <p>Resolve all @see tags on class and method json output.
-
-
-</p>
-
+  <p>Resolve all @see tags on class and method json output. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -453,12 +597,12 @@
       <span class='desc'>the json data</span>
     </li>
     <li>
-      <span class='name'>clazz</span>
+      <span class='name'>entity</span>
       <span class='type'>
         (<tt><a href='../classes/Class.html'>Class</a></tt>)
       </span>
       &mdash;
-      <span class='desc'>the class context</span>
+      <span class='desc'>the entity context</span>
     </li>
     <li>
       <span class='name'>path</span>
@@ -483,15 +627,10 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='resolveTextReferences-instance'>
-      - (String) <strong>resolveTextReferences</strong>(text, clazz, path)
+      - (String) <strong>resolveTextReferences</strong>(text = '', entity, path)
     </p>
     <div class='docstring'>
-  <p>Search a text to find see links wrapped in curly braces.
-
-
-
-</p>
-
+  <p>Search a text to find see links wrapped in curly braces. </p> 
   <div class='examples'>
     <h3>Examples:</h3>
     <h4>
@@ -526,14 +665,10 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='resolveSee-instance'>
-      - (Object) <strong>resolveSee</strong>(see, clazz, path)
+      - (Object) <strong>resolveSee</strong>(see, entity, path)
     </p>
     <div class='docstring'>
-  <p>Resolves a @see link.
-
-
-</p>
-
+  <p>Resolves a @see link. </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -547,12 +682,12 @@
       <span class='desc'>the see object</span>
     </li>
     <li>
-      <span class='name'>clazz</span>
+      <span class='name'>entity</span>
       <span class='type'>
         (<tt><a href='../classes/Class.html'>Class</a></tt>)
       </span>
       &mdash;
-      <span class='desc'>the class context</span>
+      <span class='desc'>the entity context</span>
     </li>
     <li>
       <span class='name'>path</span>
@@ -575,15 +710,25 @@
   </ul>
 </div>
   </div>
+  <div class='method_details'>
+    <p class='signature' id='resolveParamReferences-instance'>
+      - (void) <strong>resolveParamReferences</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Resolve parameter references. This goes through all method parameter and see if a param doc references another method. If so, copy over the doc meta data. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
+  Tue Apr 03 2012 19:23:40 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.4.1
-  (Node.js v0.6.11).
+  v0.6.0
+  (Node.js v0.6.14).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

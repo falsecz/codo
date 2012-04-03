@@ -13,18 +13,16 @@
     <span class='title'>Class</span>
     <nav>
       <ul>
-        <li class='frames'>
-          (<a class='frames' href='../frames.html'>frames</a>)
-        </li>
         <li class='noframes'>
           (<a class='noframes' href='#'>no frames</a>)
         </li>
       </ul>
     </nav>
     <div id='search'>
-      <a id='class_list_link' href='../class_list.html'>Class List</a>
-      <a id='method_list_link' href='../method_list.html'>Method List</a>
-      <a id='file_list_link' href='../file_list.html'>File List</a>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='class_list_link' href='../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -39,13 +37,16 @@
           <td>Defined in:</td>
           <td>src/nodes/class.coffee</td>
         </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href="../classes/Node.html">Node</a>
+          </td>
+        </tr>
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>A CoffeeScript class
-
-</p>
-
+  <p>A CoffeeScript class </p> 
 </div>
 <div class='tags'>
 </div>
@@ -80,6 +81,16 @@
     </span>
     <span class='desc'>
       Get the class doc
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getFullName-instance'>
+        - (void) <strong>getFullName</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Alias for <a href='../classes/Class.html#getClassName-instance'>Class#getClassName</a>
     </span>
   </li>
   <li>
@@ -153,6 +164,16 @@
     </span>
   </li>
 </ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+      </h2>
+      <h3 class='inherited'>
+        Methods inherited from
+        <a href="../classes/Node.html">Node</a>
+      </h3>
+      <p class='inherited'>
+        <a href="../classes/Node.html#findAncestor-instance">#findAncestor</a>
+      </p>
       <h2>Constructor Details</h2>
       <div class='methods'>
   <div class='method_details'>
@@ -160,11 +181,7 @@
       - (void) <strong>constructor</strong>(node, fileName, options, comment)
     </p>
     <div class='docstring'>
-  <p>Construct a class
-
-
-</p>
-
+  <p>Construct a class </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -212,11 +229,7 @@
       - (String) <strong>getFileName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the source file name.
-
-
-</p>
-
+  <p>Get the source file name. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -236,11 +249,7 @@
       - (Doc) <strong>getDoc</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the class doc
-
-
-</p>
-
+  <p>Get the class doc </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -256,15 +265,21 @@
 </div>
   </div>
   <div class='method_details'>
+    <p class='signature' id='getFullName-instance'>
+      - (void) <strong>getFullName</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Alias for <a href='../classes/Class.html#getClassName-instance'>Class#getClassName</a> </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
     <p class='signature' id='getClassName-instance'>
       - (String) <strong>getClassName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the full class name
-
-
-</p>
-
+  <p>Get the full class name </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -284,11 +299,7 @@
       - (String) <strong>getName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the class name
-
-
-</p>
-
+  <p>Get the class name </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -308,11 +319,7 @@
       - (String) <strong>getNamespace</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the class namespace
-
-
-</p>
-
+  <p>Get the class namespace </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -332,11 +339,7 @@
       - (String) <strong>getParentClassName</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the full parent class name
-
-
-</p>
-
+  <p>Get the full parent class name </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -356,11 +359,7 @@
       - (Array&lt;Method&gt;) <strong>getMethods</strong>()
     </p>
     <div class='docstring'>
-  <p>Get all methods.
-
-
-</p>
-
+  <p>Get all methods. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -380,11 +379,7 @@
       - (Array&lt;Variable&gt;) <strong>getVariables</strong>()
     </p>
     <div class='docstring'>
-  <p>Get all variables.
-
-
-</p>
-
+  <p>Get all variables. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -404,11 +399,7 @@
       - (Object) <strong>toJSON</strong>()
     </p>
     <div class='docstring'>
-  <p>Get a JSON representation of the object
-
-
-</p>
-
+  <p>Get a JSON representation of the object </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
@@ -427,11 +418,11 @@
     </div>
     <div id='footer'>
   Generated on
-  Sun Feb 26 2012 12:33:28 GMT+0100 (CET)
+  Tue Apr 03 2012 19:23:40 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>codo</a>
-  v0.4.1
-  (Node.js v0.6.11).
+  v0.6.0
+  (Node.js v0.6.14).
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;

@@ -10,7 +10,7 @@
   <div id='menu'>
     <a href='../class_index.html' title='Index'>Index</a>
     &raquo;
-    <span class='title'>Method</span>
+    <span class='title'>VirtualMethod</span>
     <nav>
       <ul>
         <li class='noframes'>
@@ -30,12 +30,12 @@
     <div id='content'>
       <h1>
         Class:
-        Method
+        VirtualMethod
       </h1>
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>src/nodes/method.coffee</td>
+          <td>src/nodes/virtual_method.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
@@ -46,7 +46,7 @@
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>A CoffeeScript method </p> 
+  <p>A virtual method that has been declared by the <code>@method</code> tag. </p> 
 </div>
 <div class='tags'>
 </div>
@@ -55,12 +55,12 @@
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>(entity, node, options, comment)
+        - (void) <strong>constructor</strong>(entity, doc, options)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
     <span class='desc'>
-      Construct a method
+      Construct a virtual method
     </span>
   </li>
   <li>
@@ -70,7 +70,7 @@
       </a>
     </span>
     <span class='desc'>
-      Get the method type, either `class` or `instance`
+      Get the method type, either `class`, `instance` or `mixin`.
     </span>
   </li>
   <li>
@@ -168,10 +168,10 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>(entity, node, options, comment)
+      - (void) <strong>constructor</strong>(entity, doc, options)
     </p>
     <div class='docstring'>
-  <p>Construct a method </p> 
+  <p>Construct a virtual method </p> 
 </div>
 <div class='tags'>
   <h3>Parameters:</h3>
@@ -185,12 +185,12 @@
       <span class='desc'>the methods class</span>
     </li>
     <li>
-      <span class='name'>node</span>
+      <span class='name'>doc</span>
       <span class='type'>
-        (<tt>Object</tt>)
+        (<tt><a href='../classes/Doc.html'>Doc</a></tt>)
       </span>
       &mdash;
-      <span class='desc'>the node</span>
+      <span class='desc'>the virtual doc</span>
     </li>
     <li>
       <span class='name'>options</span>
@@ -199,14 +199,6 @@
       </span>
       &mdash;
       <span class='desc'>the parser options</span>
-    </li>
-    <li>
-      <span class='name'>comment</span>
-      <span class='type'>
-        (<tt>Object</tt>)
-      </span>
-      &mdash;
-      <span class='desc'>the comment node</span>
     </li>
   </ul>
 </div>
@@ -219,7 +211,7 @@
       - (String) <strong>getType</strong>()
     </p>
     <div class='docstring'>
-  <p>Get the method type, either <code>class</code> or <code>instance</code> </p> 
+  <p>Get the method type, either <code>class</code>, <code>instance</code> or <code>mixin</code>. </p> 
 </div>
 <div class='tags'>
   <h3>Returns:</h3>

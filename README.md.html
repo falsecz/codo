@@ -528,6 +528,7 @@ Options:
   -o, --output-dir  The output directory                [default: &quot;./doc&quot;]
   -v, --verbose     Show parsing errors                 [boolean]  [default: false]
   -h, --help        Show the help
+  -s, --server      Start a documentation server
   --private         Show private methods and classes
   --title                                               [default: &quot;CoffeeScript API Documentation&quot;]</code></pre>
 <h3>Project defaults</h3>
@@ -549,26 +550,32 @@ be rendered as Markdown.
 
 </p>
 <h2>Keyboard navigation</h2>
+<p>You can quickly search and jump through the documentation by using the fuzzy finder dialgo:
+
+</p>
+<ul>
+<li>Open fuzzy finder dialog: <code>Ctrl-T</code></li>
+</ul>
 <p>In frame mode you can toggle the list naviation frame on the left side:
 
 </p>
 <ul>
-<li>Toggle list view: <code>L</code></li>
+<li>Toggle list view: <code>Ctrl-L</code></li>
 </ul>
 <p>You can focus a list in frame mode or toggle a tab in frameless mode:
 
 </p>
 <ul>
-<li>Class list: <code>C</code></li>
-<li>Mixin list: <code>I</code></li>
-<li>Method list: <code>M</code></li>
-<li>File list: <code>F</code></li>
+<li>Class list: <code>Ctrl-C</code></li>
+<li>Mixin list: <code>Ctrl-I</code></li>
+<li>Method list: <code>Ctrl-M</code></li>
+<li>File list: <code>Ctrl-F</code></li>
 </ul>
 <p>You can focus and blur the search input:
 
 </p>
 <ul>
-<li>Focus search input: <code>S</code></li>
+<li>Focus search input: <code>Ctrl-S</code></li>
 <li>Blur search inputL <code>Esc</code></li>
 </ul>
 <p>In frameless mode you can close the list tab:
@@ -609,6 +616,7 @@ project when reporting an issue with parsing your CoffeeScript code.
 that compiles to JavaScript and makes me enjoy JavaScript development.</li>
 <li><a href="https://github.com/lsegal">Loren Segal</a> for creating YARD and giving me the perfect documentation syntax for
 dynamic programming languages.</li>
+<li><a href="https://github.com/stratuseditor">Stratus Editor</a> for open sourcing their <a href="https://github.com/stratuseditor/fuzzy-filter">fuzzy filter</a>.</li>
 </ul>
 <h2>Alternatives</h2>
 <ul>
@@ -659,11 +667,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </div>
     <div id='footer'>
   Generated on
-  Wed Apr 04 2012 23:30:50 GMT+0200 (CEST)
+  Thu Apr 19 2012 13:44:56 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v0.6.2
-  (Node.js v0.6.14).
+  (Node.js v0.6.15).
   &#10034;
   Press H to see the keyboard shortcuts
   &#10034;

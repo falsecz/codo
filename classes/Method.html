@@ -4,9 +4,11 @@
   <title>Codo Documentation</title>
   <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
   <script src='../assets/codo.js'></script>
+  <script src='../assets/search_data.js'></script>
 </head>
   <body>
-    <div id='header'>
+    <div id='base' data-path='../'></div>
+<div id='header'>
   <div id='menu'>
     <a href='../class_index.html' title='Index'>Index</a>
     &raquo;
@@ -26,13 +28,26 @@
     </div>
   </div>
   <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
   <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
     <p>
       In frame mode you can toggle the list naviation frame on the left side:
     </p>
     <ul>
       <li>
-        <span>L</span>
+        <span>Ctrl-L</span>
         Toggle list view
       </li>
     </ul>
@@ -41,19 +56,19 @@
     </p>
     <ul>
       <li>
-        <span>C</span>
+        <span>Ctrl-C</span>
         Class list
       </li>
       <li>
-        <span>I</span>
+        <span>Ctrl-I</span>
         Mixin list
       </li>
       <li>
-        <span>M</span>
+        <span>Ctrl-M</span>
         Method list
       </li>
       <li>
-        <span>F</span>
+        <span>Ctrl-F</span>
         File list
       </li>
     </ul>
@@ -62,7 +77,7 @@
     </p>
     <ul>
       <li>
-        <span>S</span>
+        <span>Ctrl-S</span>
         Focus search input
       </li>
       <li>
@@ -453,13 +468,13 @@
     </div>
     <div id='footer'>
   Generated on
-  Thu Apr 19 2012 13:44:56 GMT+0200 (CEST)
+  Thu Apr 19 2012 13:53:14 GMT+0200 (CEST)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
-  v0.6.2
+  v0.7.0
   (Node.js v0.6.15).
   &#10034;
-  Press H to see the keyboard shortcuts
+  Press Ctrl-h to see the keyboard shortcuts
   &#10034;
   <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
   &#10034;
